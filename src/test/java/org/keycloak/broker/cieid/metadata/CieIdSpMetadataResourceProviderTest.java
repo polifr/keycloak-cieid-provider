@@ -197,7 +197,7 @@ import javax.xml.transform.Source;
      }
  
      private Map<String, String> mockCommonConfig() {
-         Map<String, String> providerConfig = new HashMap();
+         Map<String, String> providerConfig = new HashMap<String, String>();
          // Generic SAML configuration options
  
          providerConfig.put(SAMLIdentityProviderConfig.ENTITY_ID, SP_KEYCLOAK_BASE_URL);
@@ -245,7 +245,7 @@ import javax.xml.transform.Source;
          when(idpModel.getAlias()).thenReturn(alias);
          when(idpModel.getProviderId()).thenReturn(CieIdIdentityProviderFactory.PROVIDER_ID);
          when(idpModel.isEnabled()).thenReturn(true);
-         Map<String, String> idpConfig = new HashMap();
+         Map<String, String> idpConfig = new HashMap<String, String>();
          idpConfig.putAll(commonConfig);
          idpConfig.put(SAMLIdentityProviderConfig.SINGLE_SIGN_ON_SERVICE_URL, "https://" + alias + ".localtest.me/samlsso/login");
          idpConfig.put(SAMLIdentityProviderConfig.SINGLE_LOGOUT_SERVICE_URL, "https://" + alias + ".localtest.me/samlsso/logout");
